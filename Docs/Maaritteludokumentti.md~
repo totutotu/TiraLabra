@@ -22,9 +22,7 @@ Laskettuaan reitin algoritmi tulostaa kevyimmän reitin korvaten alkuperäisen k
 
 Algoritmin alussa tarkistetaan onko piste ylipäätään saavutettavissa kentässä, mihin käytämme alussa Dijkstran algoritmia.
 
-Keko-operaatioiden aikavaativuudet saadaan logaritmisiksi solmujen määrän suhteen, kekoon lisäämisiä (heap-insert (O(log|V|))) tehdään solmujen määrän verran, eli |V|log|V|. Keon relaksominen (O(log|V|) ja läpikäynninaikaisia etäisyyksiä muokataan pienemmäksi (heap-decrease-key (O(log|V|)), tehdään niin monta kertaa kuin keossa on kaaria, eli O(|E|log|V|). Täten saadaan koko algoritmin aikavaativuukseksi O((|E|+|V|)log|V|).
 
-Tilavaativuus on algoritmissa |V|, sillä laajin tilaavievä komponentti on keko, jossa tallennettuna solmujen määrä elementtejä.
 
 Lähteet:
 http://www.cs.helsinki.fi/u/floreen/tira2015/sivut351-638.pdf
