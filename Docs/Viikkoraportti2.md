@@ -1,0 +1,3 @@
+Viikon 2 koodaus sujui suuremmitta huolitta, kunnes havahduin siihen, etten tiedä miten junit-testejä tehdään, kun koodin suorittamiseen tarvitaan käyttäjän tarjoama syöte. Teen kaikki tarvittavat testit siis loppuun ens viikon deadlineen mennessä, kunhan saan vain itseäni viisastettua.
+
+A-tähti -algoritmia koodatessa haasteeksi on syntynyt tehokkuus. Pohdin paljon, mikä on tehokkain ja minimalistisin tapa, jolla voisin tehtävän suorittaa, tulen todennäköisesti muuttamaan peruskomponentteja lähiviikkoina vielä paljon, leikkaamaan turhat komponentin kokonaan ulos ja säästämällä vain sen mitä täytyy.

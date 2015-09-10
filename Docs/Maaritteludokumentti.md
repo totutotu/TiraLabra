@@ -1,6 +1,6 @@
 A*
 
-A*-algoritmi etsii syötetyn kentän lyhimmän reitän määritellystä lähtöpisteestä määriteltyyn maaliin. Reitin varrella, voi olla esteitä, ja jostain pisteistä voi olla "raskaampi" liikkua eteenpäin kuin toisesta suunnasta, ja algoritmi etsii esteet kiertävän, kevyimmän reitin alusta loppuun.
+A*-algoritmi etsii syötetyn kentän lyhyimmän reitin määritellystä lähtöpisteestä määriteltyyn maaliin. Reitin varrella, voi olla esteitä, ja jostain pisteistä voi olla "raskaampi" liikkua eteenpäin kuin toisesta suunnasta, ja algoritmi etsii esteet kiertävän, kevyimmän reitin alusta loppuun.
 
 Algoritmi on muunnelma Dijkstran algoritmista.
 
@@ -13,14 +13,14 @@ Ohjelmaan lähtökohtaisesti käytän syötteenä käsin naputeltuja "kenttiä",
 213X9#2122
 1421##41Y2
 213##3##12
-213#123434
+2134123434
 12######21,
 
 jossa numerot kertovat kuinka raskasta on liikkua kyseiselle ruudulle, # on merkki esteestä, X on lähtö- ja Y on päättöpiste.
 
 Laskettuaan reitin algoritmi tulostaa kevyimmän reitin korvaten alkuperäisen kentän käyttämättömät ruudut 0:lla, ja reitin 1:llä. Kentän perään algoritmi tulostaa reitin kokonaispainon.
 
-Algoritmin alussa tarkistetaan onko piste ylipäätään saavutettavissa kentässä, mihin käytämme alussa Dijkstran algoritmia.
+Algoritmin alussa tarkistetaan onko piste ylipäätään saavutettavissa kentässä, mihin käytämme alussa Dijkstran algoritmia sellaisenaan (aikav (|E|+|V|)log|V|).
 
 Keko-operaatioiden aikavaativuudet saadaan logaritmisiksi solmujen määrän suhteen, kekoon lisäämisiä (heap-insert (O(log|V|))) tehdään solmujen määrän verran, eli |V|log|V|. Keon relaksominen (O(log|V|) ja läpikäynninaikaisia etäisyyksiä muokataan pienemmäksi (heap-decrease-key (O(log|V|)), tehdään niin monta kertaa kuin keossa on kaaria, eli O(|E|log|V|). Täten saadaan koko algoritmin aikavaativuukseksi O((|E|+|V|)log|V|).
 
