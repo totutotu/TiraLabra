@@ -12,6 +12,11 @@ import java.util.PriorityQueue;
  * kaaret ovat vakipainoisia), ja viereiset, saavutettavat solmut saadaan
  * koordinaattien avulla.
  * 
+ * Verkko sisältää myös tiedon alkusolmun ja loppusolmun indekseistä
+ * solmut[]-taulukossa
+ * 
+ * 
+ * 
  * @author tuomo
  */
 public class Verkko {
