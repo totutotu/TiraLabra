@@ -3,6 +3,7 @@ package sovelluslogiikka;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.PriorityQueue;
 
 /**
  * Verkko on listallinen solmuja.
@@ -15,6 +16,8 @@ import java.util.List;
  */
 public class Verkko {
     private Solmu[] solmut;
+    private int alkuSolmu;
+    private int loppuSolmu;
 
     public Verkko(char[][] kentta) {
         solmut = new Solmu[kentta[0].length * kentta.length];
@@ -22,6 +25,7 @@ public class Verkko {
     }
 
     public void luoVerkko(char[][] kentta) {
+                
         
         int x = 0;
         int y = 0;
@@ -32,9 +36,13 @@ public class Verkko {
                     solmut[i] = new Solmu(x, y, Integer.parseInt(l + ""));
                 } else if (l == '#') {
                     solmut[i] = new Solmu(x, y, Integer.MAX_VALUE);
-                } else if (l == 'X' || l == 'Y') {
+                } else if (l == 'X') {
                     solmut[i] = new Solmu(x, y, 0);
-                }
+                    alkuSolmu = i;
+                } else if (l == 'Y') {
+                    solmut[i] = new Solmu(x, y, 0);
+                    loppuSolmu = i;
+            }
                 x++;
                 i++;
             }
@@ -42,6 +50,20 @@ public class Verkko {
             x = 0;
         }
     }
+    
+    public Solmu[] getSolmut() {
+        return solmut;
+    }
+
+    public int getLoppuSolmu() {
+        return loppuSolmu;
+    }
+    
+    public int getAlkuSolmu() {
+        return alkuSolmu;
+    }
+
+    
 //    Onko tarpeellinen? Verkon läpikäynti riveittäin onnistuu näin
 //    public void tulostaVerkko() {
 //        int rivi = solmut[0].getY();

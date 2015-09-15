@@ -4,13 +4,12 @@ import java.util.PriorityQueue;
 
 /**
  *
- * @author tuomo
+ * @author totutotu
  */
-public class MinimiKeko {
+public class MinimiKeko extends PriorityQueue{
     final PriorityQueue keko;
 
     public MinimiKeko() {
-        keko = new PriorityQueue();
-    }  
-    
+        this.keko = new PriorityQueue();
+    }
 }
