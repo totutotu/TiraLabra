@@ -16,29 +16,43 @@ import java.util.List;
 public class Verkko {
     private Solmu[] solmut;
 
-    public Verkko(Solmu[] solmut) {  
-        this.solmut = solmut;
+    public Verkko(char[][] kentta) {
+        solmut = new Solmu[kentta[0].length * kentta.length];
+        this.luoVerkko(kentta);
     }
 
-    
-    
-    
-    public Verkko(char[][] kentta) {
+    public void luoVerkko(char[][] kentta) {
         
-//        int x = 0;
-//        int y = 0;
-//        for (char[] kentta1 : kentta) {
-//            for (char l : kentta1) {
-//                if(l != '#') {
-//                    solmut.add(new Solmu(x, y, Integer.parseInt(l + "")));
-//                } else {
-//                    solmut.add(new Solmu(x, y, Integer.MAX_VALUE));
-//                }
-//                x++;
-//            }
-//            y++;
-//            x = 0;
-//        }
+        int x = 0;
+        int y = 0;
+        int i = 0;
+        for (char[] kentta1 : kentta) {
+            for (char l : kentta1) {
+                if(l != '#' && l != 'Y' && l != 'X') {
+                    solmut[i] = new Solmu(x, y, Integer.parseInt(l + ""));
+                } else if (l == '#') {
+                    solmut[i] = new Solmu(x, y, Integer.MAX_VALUE);
+                } else if (l == 'X' || l == 'Y') {
+                    solmut[i] = new Solmu(x, y, 0);
+                }
+                x++;
+                i++;
+            }
+            y++;
+            x = 0;
+        }
     }
+//    Onko tarpeellinen? Verkon läpikäynti riveittäin onnistuu näin
+//    public void tulostaVerkko() {
+//        int rivi = solmut[0].getY();
+//        for (Solmu solmut1 : solmut) {
+//            if(solmut1.getY() > rivi){
+//                System.out.println("");
+//                rivi++;
+//            }
+//            System.out.print(solmut1.getPaino());
+//            
+//        }
+//    }
     
 }

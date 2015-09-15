@@ -5,7 +5,6 @@
  */
 package sovelluslogiikka;
 
-import junit.framework.Test;
 import junit.framework.TestCase;
 
 /**
@@ -28,9 +27,7 @@ public class SolmuTest extends TestCase {
         super.tearDown();
     }
 
-    
-    @Test
-    public void solmuTallentuuAnnetuillaParametreilla() {
+    public void testSolmuTallentuuAnnetuillaParametreilla() {
         Solmu solmu  = new Solmu(1,4,5);
         assertEquals(1, solmu.getX());
         assertEquals(4, solmu.getY());

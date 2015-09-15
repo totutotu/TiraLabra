@@ -33,44 +33,43 @@ public class KaynnistinTest extends TestCase {
     }
 
     
-    @Test
-    public void kokoonEiNegatiivisia1() {
-
+    public void testKokoonEiNegatiivisia1() {
+        Scanner lukija  = new Scanner("-1");
+        kaynnistin.lueLeveys(lukija);
     }
     
-    @Test
     public void kokoonEiNegatiivisia2() {
 
     }
-    
-    @Test
-    public void rivinPituus() {
-        
-    }
-    
-    @Test
-    public void eiVaariaMerkkeja() {
-        
-    }
-    
-    @Test
-    public void maaliLoytyy() {
-        
-    }
-    
-    @Test
-    public void alkuLoytyy() {
-        
-    }
-    
-    @Test 
-    public void maalejaYksi() {
-        
-    }
-    
-    @Test
-    public void alkujaYksi() {
-        
-    }
+//    
+//    @Test
+//    public void rivinPituus() {
+//        
+//    }
+//    
+//    @Test
+//    public void eiVaariaMerkkeja() {
+//        
+//    }
+//    
+//    @Test
+//    public void maaliLoytyy() {
+//        
+//    }
+//    
+//    @Test
+//    public void alkuLoytyy() {
+//        
+//    }
+//    
+//    @Test 
+//    public void maalejaYksi() {
+//        
+//    }
+//    
+//    @Test
+//    public void alkujaYksi() {
+//        
+//    }
     
 }

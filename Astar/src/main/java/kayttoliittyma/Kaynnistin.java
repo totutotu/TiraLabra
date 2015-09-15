@@ -3,6 +3,7 @@ package kayttoliittyma;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import sovelluslogiikka.Verkko;
 
 /**
  * Kaynnistin
@@ -23,7 +24,9 @@ public class Kaynnistin {
         tulostaOhjeet();
 
         char[][] kentta = lueKentta();
-
+        
+        Verkko verkko = new Verkko(kentta);        
+        
 //        etsiReitti(kentta);
     }
 
