@@ -7,7 +7,7 @@ package sovelluslogiikka;
 public class Solmu {
     final private int x;
     final private int y;
-    final private int paino;
+    private int paino;
 
     public Solmu(int x, int y, int paino) {
         this.x = x;
@@ -25,5 +25,9 @@ public class Solmu {
 
     public int getPaino() {
         return paino;
+    }
+
+    void setPaino(int uusiPaino) {
+        this.paino = uusiPaino;
     }
 }
