@@ -3,8 +3,9 @@ package sovelluslogiikka;
 
 /**
  *
- * @author tuomo
+ * @author totutotu
  */
+<<<<<<< HEAD
 public class MinimiKeko {
     final Solmu[] solmut;
     private int koko;
@@ -77,4 +78,12 @@ public class MinimiKeko {
     }
     
     
+=======
+public class MinimiKeko extends PriorityQueue{
+    final PriorityQueue keko;
+
+    public MinimiKeko() {
+        this.keko = new PriorityQueue();
+    }
+>>>>>>> 37f165f8d8b9a88836c77f3e841655805ec2f258
 }
