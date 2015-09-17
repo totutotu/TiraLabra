@@ -1,20 +1,15 @@
 package sovelluslogiikka;
 
-
-/**
- *
- * @author totutotu
- */
-<<<<<<< HEAD
 public class MinimiKeko {
-    final Solmu[] solmut;
+    //vai sittenkin kaksiulotteinen taulukko, jokaisella kaksi osaa, eka avain, 
+    //toka paino? 
+   final Solmu[] solmut;
     private int koko;
 
     public MinimiKeko(int pituus) {
        this.solmut = new Solmu[pituus];
        this.koko = 0;
     }  
-    
     public void asetaSolmu(Solmu solmu) {
         this.koko++;
         int i = this.koko;
@@ -77,13 +72,4 @@ public class MinimiKeko {
         
     }
     
-    
-=======
-public class MinimiKeko extends PriorityQueue{
-    final PriorityQueue keko;
-
-    public MinimiKeko() {
-        this.keko = new PriorityQueue();
-    }
->>>>>>> 37f165f8d8b9a88836c77f3e841655805ec2f258
 }

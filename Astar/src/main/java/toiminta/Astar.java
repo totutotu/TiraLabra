@@ -2,6 +2,7 @@ package toiminta;
 
 import java.util.PriorityQueue;
 import sovelluslogiikka.MinimiKeko;
+import sovelluslogiikka.MinimiKeko2;
 import sovelluslogiikka.Solmu;
 import sovelluslogiikka.Verkko;
 
@@ -17,7 +18,7 @@ public class Astar {
     private int[] polku;
     private int alkuSolmu;
     private int loppuSolmu;
-    private MinimiKeko keko;
+    private MinimiKeko2 keko;
     
     public Astar(Verkko verkko) {
         this.verkko = verkko;
@@ -26,7 +27,7 @@ public class Astar {
         this.polku = new int[verkko.getSolmut().length];
         this.alkuSolmu = verkko.getAlkuSolmu();
         this.loppuSolmu = verkko.getLoppuSolmu();
-        this.keko = new MinimiKeko();
+        this.keko = new MinimiKeko2(verkko.getSolmut().length);
     }
     
     private char[][] etsiPolku() {
@@ -51,12 +52,12 @@ public class Astar {
         
         
         for (Solmu solmu : solmut) {
-            alkuun[i] = Integer.MAX_VALUE;
+            alkuun[i] = Integer.MAX_VALUE - 1000;
             loppuun[i] = Math.abs(solmu.getX() - solmut[loppuSolmu].getX()) +
                     Math.abs(solmu.getY() - solmut[loppuSolmu].getY());
             polku[i] = -1;
             
-            //Asetetaan minimikekoon
+            keko.asetaSolmu(i, loppuun[i]);
             
             i++;
         }

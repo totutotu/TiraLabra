@@ -15,7 +15,9 @@ import java.util.PriorityQueue;
  * Verkko sisältää myös tiedon alkusolmun ja loppusolmun indekseistä
  * solmut[]-taulukossa
  * 
- * 
+ * Verkon luomiseen liittyvä virheenhallinta löytyy jo käyttöliittymästä,
+ * joten ainakaan toistaiseksi verkolle ei ole tarpeen tehdä testejä:
+ * väärää syötettä ei voi tulla vastaan.
  * 
  * @author tuomo
  */
