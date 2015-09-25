@@ -28,10 +28,11 @@ public class SolmuTest extends TestCase {
     }
 
     public void testSolmuTallentuuAnnetuillaParametreilla() {
-        Solmu solmu  = new Solmu(1,4,5);
+        Solmu solmu  = new Solmu(1,4,5, 1);
         assertEquals(1, solmu.getX());
         assertEquals(4, solmu.getY());
         assertEquals(5, solmu.getPaino());
+        assertEquals(1, solmu.getIndeksi());
     }
     // TODO add test methods here. The name must begin with 'test'. For example:
     // public void testHello() {}

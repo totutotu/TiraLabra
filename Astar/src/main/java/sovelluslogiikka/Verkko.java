@@ -25,12 +25,19 @@ public class Verkko {
     private Solmu[] solmut;
     private int alkuSolmu;
     private int loppuSolmu;
+    private int korkeus;
+    private int leveys;
 
     public Verkko(char[][] kentta) {
         solmut = new Solmu[kentta[0].length * kentta.length];
+        this.leveys = -1;
+
         this.luoVerkko(kentta);
     }
-
+    /**
+     * Rakentaa kentästä verkon syötetyn kentän perusteella
+     * @param kentta kenttä taulukkomuodossa
+     */
     public void luoVerkko(char[][] kentta) {
                 
         
@@ -40,23 +47,36 @@ public class Verkko {
         for (char[] kentta1 : kentta) {
             for (char l : kentta1) {
                 if(l != '#' && l != 'Y' && l != 'X') {
-                    solmut[i] = new Solmu(x, y, Integer.parseInt(l + ""));
+                    solmut[i] = new Solmu(x, y, Integer.parseInt(l + ""), i);
                 } else if (l == '#') {
-                    solmut[i] = new Solmu(x, y, Integer.MAX_VALUE);
+                    solmut[i] = new Solmu(x, y, 100000, i);
                 } else if (l == 'X') {
-                    solmut[i] = new Solmu(x, y, 0);
+                    solmut[i] = new Solmu(x, y, 0, i);
                     alkuSolmu = i;
                 } else if (l == 'Y') {
-                    solmut[i] = new Solmu(x, y, 0);
+                    solmut[i] = new Solmu(x, y, 0, i);
                     loppuSolmu = i;
             }
                 x++;
                 i++;
             }
+            if(this.leveys == -1) {
+                this.leveys = x;
+            }
             y++;
             x = 0;
         }
+        this.korkeus = y;
     }
+
+    public int getKorkeus() {
+        return korkeus;
+    }
+
+    public int getLeveys() {
+        return leveys;
+    }
+    
     
     public Solmu[] getSolmut() {
         return solmut;

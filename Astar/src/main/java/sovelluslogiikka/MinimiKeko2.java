@@ -5,6 +5,12 @@ package sovelluslogiikka;
  * Solmulla ensimmäisena arvona taulukossa indeksi verkossa, toisena 
  * arvioita etäisyys lopusta, jonka perusteella haetaan aina "seuraavaksi paras
  * vaihtoehto".
+ * 
+ * Indeksejä käsitellään luokassa hämäävästi etenemään arvosta numero 1,
+ * mikä helpottaa solmujen vanhempien ja jälkeläisten etsimistä, mutta koska
+ * javan taulukot alkavat 0:sta, on kutsutuista indekseistä vähennettävä 1 
+ * taulukosta kyseistä kappaletta hakiessa.
+ *
  * @author tuomo
  */
 public class MinimiKeko2 {
@@ -47,6 +53,10 @@ public class MinimiKeko2 {
         return pienin;
     }
     
+    /**
+     * korjaa kekoehdon
+     * @param i mistä kohdin lähdetään korjailemaan
+     */
     private void korjaaKeko(int i) {
         int v = vasen(i);
         int o = oikea(i);
@@ -70,7 +80,7 @@ public class MinimiKeko2 {
         }
     }
     /**
-     * Metodi toistaiseksi täysen tehoton, koska joudutaan käymään koko helvetin lista
+     * Metodi toistaiseksi täysin tehoton, koska joudutaan käymään koko helvetin lista
      * lävitse, korjailen kun viisastun
      * @param i
      * @param uusiPaino 
@@ -87,7 +97,7 @@ public class MinimiKeko2 {
         
         if (uusiPaino < this.keko[haettu - 1][1]) {
             this.keko[haettu - 1][1] = uusiPaino;
-            while (i > 0 && this.keko[parent(haettu) - 1][1] > this.keko[haettu - 1][1]) {
+            while (haettu > 1 && this.keko[parent(haettu) - 1][1] > this.keko[haettu - 1][1]) {
                 int[] solmu = this.keko[haettu - 1];
                 this.keko[haettu - 1] = this.keko[parent(haettu) - 1];
                 this.keko[parent(haettu) - 1] = solmu;
@@ -96,25 +106,44 @@ public class MinimiKeko2 {
         }
     }
     
+    /**
+     * 
+     * @param i solmun indeksi
+     * @return  solmun vanhemman indeksi + 1
+     */
     public int parent(int i) {
         return i/2;
     }    
-    
+    /**
+     * 
+     * @param i solmun indeksi
+     * @return  vasen jälkeläinen
+     */
     private int vasen(int i) {
         return 2 * i;
     }
     
+    /**
+     * 
+     * @param i solmun indeksi
+     * @return oikea jälkeläinen
+     */
     private int oikea(int i) {
         return 2 * i + 1;
     }
     
-    public void tulostaKeko() {
-        for (int[] keko1 : keko) {
-            for (int l : keko1) {
-                System.out.print((l) + ", ");
-            }
-            System.out.println("");
-        }
+//  Apumetodi, tulostaa keon, helpottaa tutkiskeluun  
+//    public void tulostaKeko() {
+//        for (int[] keko1 : keko) {
+//            for (int l : keko1) {
+//                System.out.print((l) + ", ");
+//            }
+//            System.out.println("");
+//        }
+//    }
+
+    public boolean tyhja() {
+        return this.koko == 0;
     }
     
 }

@@ -4,6 +4,7 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import sovelluslogiikka.Verkko;
+import toiminta.Astar;
 
 /**
  * Kaynnistin
@@ -26,8 +27,9 @@ public class Kaynnistin {
         char[][] kentta = lueKentta();
         
         Verkko verkko = new Verkko(kentta);        
-        
-//        etsiReitti(kentta);
+        Astar star = new Astar(verkko);
+        kentta =  star.etsiPolku();
+
     }
 
     
@@ -35,7 +37,15 @@ public class Kaynnistin {
      * Tulostaa algoritmin käyttöohjeet
      */
     private void tulostaOhjeet() {
-        System.out.println("tässä tulostuu kauniit ohjeet");
+        System.out.println("Tervetuloa A*:een! \n"
+                + "A*:een voit syöttää kentän, jolle algoritmi etsii kevyimmän polun alusta maaliin. \n"
+                + "Algoritmi kysyy ensin minkä mittaisen kentän haluat luoda (leveys ja korkeus), minkä \n"
+                + "jälkeen pyytää syöttämään haluamasi kentän. Kenttä koostuu 0-9 välillä olevista \n"
+                + "numeroista, jotka määrittävät, kuinka raskasta mihinkin pisteeseen on liikkua, \n"
+                + ", #-merkeistä eli 'seinistä', sekä yhdestä X:stä, jolla merkitään \n"
+                + "lähtöpistettä, sekä Y:stä, joka edustaa maalia. \n\n"
+                + "Kenttä syötetään rivi kerrallaan, joten suunnittelethan, millaisen kentän syötät\n"
+                + "etukateen.");
         //millainen syötetyn kentän tulee olla, kirjoita "help" niin ohjeet uusiksi,
         //tyhjän rivin syöttäminen päättää kentän syötön,
         //

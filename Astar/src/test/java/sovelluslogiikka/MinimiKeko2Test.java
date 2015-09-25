@@ -27,7 +27,7 @@ public class MinimiKeko2Test extends TestCase {
         this.keko = new MinimiKeko2(7);
         this.solmut = new Solmu[7];
         for (int i = 1; i <= 7; i++) {
-            solmut[i - 1] = new Solmu(2, 4, (i * 3 ) % 7);
+            solmut[i - 1] = new Solmu(2, 4, (i * 3 ) % 7, 1);
         }
     }
     
