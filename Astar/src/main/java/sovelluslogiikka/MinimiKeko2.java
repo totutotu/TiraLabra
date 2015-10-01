@@ -132,15 +132,6 @@ public class MinimiKeko2 {
         return 2 * i + 1;
     }
     
-//  Apumetodi, tulostaa keon, helpottaa tutkiskeluun  
-//    public void tulostaKeko() {
-//        for (int[] keko1 : keko) {
-//            for (int l : keko1) {
-//                System.out.print((l) + ", ");
-//            }
-//            System.out.println("");
-//        }
-//    }
 
     public boolean tyhja() {
         return this.koko == 0;

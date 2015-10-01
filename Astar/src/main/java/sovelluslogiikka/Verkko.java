@@ -39,8 +39,7 @@ public class Verkko {
      * @param kentta kenttä taulukkomuodossa
      */
     public void luoVerkko(char[][] kentta) {
-                
-        
+                    
         int x = 0;
         int y = 0;
         int i = 0;
@@ -81,7 +80,7 @@ public class Verkko {
     public Solmu[] getSolmut() {
         return solmut;
     }
-
+    
     public int getLoppuSolmu() {
         return loppuSolmu;
     }
@@ -90,18 +89,4 @@ public class Verkko {
         return alkuSolmu;
     }
 
-    
-//    Onko tarpeellinen? Verkon läpikäynti riveittäin onnistuu näin
-//    public void tulostaVerkko() {
-//        int rivi = solmut[0].getY();
-//        for (Solmu solmut1 : solmut) {
-//            if(solmut1.getY() > rivi){
-//                System.out.println("");
-//                rivi++;
-//            }
-//            System.out.print(solmut1.getPaino());
-//            
-//        }
-//    }
-    
 }

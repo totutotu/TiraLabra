@@ -1,0 +1,9 @@
+Tällä viikolla puuhattu koodia loppuun. Algoritmin pitäisi toimia tällä hetkellä halutulla tavalla.
+
+Koodin seasta löytyy tällä hetkellä vielä muutamia ylimääräisiä muuttujia, ja kenties jokunen metodikin, loppuhiontaa vailla.
+
+Minimikeon painonkasvatusongelma on läsnä, mutta työn alla, muuten voin sanoa olevani tyytyväinen kokonaisuuten, vaikka algoritmi ei olisi vielä 100% määreiden mukainen. 
+
+Voin sanoa tämän tekemisen olevan opettavaisin asia pitkään aikaan, ja olen täysin ylpeä aikaansaannoksistani; ison projektin valmiiksi saatua on paljon helpompaa aloittaa seuraava, virheistä oppii ja monimutkaisten kokonaisuuksien hahmottaminen ja hallitseminen on kerta kerralta vähemmän kaaosta.
+
+Seuraavalla viikolla tavoitteena saada Astarille myös aikaiseksi testit, joita ei vielä ole. Joidenkin etodien palautusarvoja on ehkä muutettava, jotta yksittäisten testien tekeminen olisi helpompaa. Käsintestausta olen tehnyt _paljon_.

@@ -39,8 +39,9 @@ public class Kaynnistin {
     private void tulostaOhjeet() {
         System.out.println("Tervetuloa A*:een! \n"
                 + "A*:een voit syöttää kentän, jolle algoritmi etsii kevyimmän polun alusta maaliin. \n"
-                + "Algoritmi kysyy ensin minkä mittaisen kentän haluat luoda (leveys ja korkeus), minkä \n"
-                + "jälkeen pyytää syöttämään haluamasi kentän. Kenttä koostuu 0-9 välillä olevista \n"
+                + "Algoritmi kysyy ensin minkä mittaisen kentän haluat luoda (leveys ja korkeus), jonka \n"
+                + "jälkeen pyytää syöttämään haluamasi kentän. Algoritmi vastaanottaa vain yhtä leveita ja korkeita kenttiä. \n\n"
+                + "Kenttä koostuu 0-9 välillä olevista \n"
                 + "numeroista, jotka määrittävät, kuinka raskasta mihinkin pisteeseen on liikkua, \n"
                 + ", #-merkeistä eli 'seinistä', sekä yhdestä X:stä, jolla merkitään \n"
                 + "lähtöpistettä, sekä Y:stä, joka edustaa maalia. \n\n"
@@ -58,7 +59,7 @@ public class Kaynnistin {
     private char[][] lueKentta() {
         Scanner lukija = new Scanner(System.in);
         int leveys = lueLeveys(lukija);
-        int korkeus = lueKorkeus(lukija);
+        int korkeus = leveys;
         String rivi = "";
         char[][] kentta = new char[korkeus][leveys];
 
@@ -114,7 +115,7 @@ public class Kaynnistin {
      * @return kentän leveys
      */
     public int lueLeveys(Scanner lukija) {
-        System.out.println("Kuinka leveä kenttä luodaan? (väh. 2)");
+        System.out.println("Kuinka leveä ja korkea kenttä luodaan? (väh. 2)");
         int leveys = -1;
         while (leveys < 2) {
             try {

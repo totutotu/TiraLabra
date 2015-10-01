@@ -103,5 +103,19 @@ public class MinimiKeko2Test extends TestCase {
         assertEquals(6, keko.pieninSolmu());
         assertEquals(3, keko.pieninSolmu());
     }
+        public void testArvojenLaskeminenKorjaaKeonOikein2() {
+        for (int i = 0; i < 7; i++) {
+            this.keko.asetaSolmu(i, this.solmut[i].getPaino());
+        }
+        
+        this.keko.laskePainoa(3, 0);
+        this.keko.laskePainoa(0, 0);
+        
+        
+        assertEquals(6, keko.pieninSolmu());
+        assertEquals(3, keko.pieninSolmu());
+        assertEquals(0, keko.pieninSolmu());
+    }
+   
 }   
 

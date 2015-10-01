@@ -4,21 +4,28 @@ import java.util.Stack;
 
 public class Pino {
     private Stack pino;
+    private int[] taulu;
+    private int katto;
 
     public Pino(int koko) {
-        this.pino = new Stack();
+        katto = -1;
+        taulu = new int[koko];
     }
     
     public void lisaa(int i) {
-        pino.push(i);
+        taulu[katto + 1] = i;
+        katto++;
     }
     
     public int pop() {
-        return (int) pino.pop();
+        int pois = taulu[katto];
+        katto--;
+        return pois;
+        
     }
     
     public boolean tyhja() {
-        return this.pino.empty();
+        return katto==-1;
     }
     
 }
