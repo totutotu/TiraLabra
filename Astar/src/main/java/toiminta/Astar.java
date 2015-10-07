@@ -6,7 +6,8 @@ import sovelluslogiikka.Solmu;
 import sovelluslogiikka.Verkko;
 
 /**
- * This is where the magic happens
+ * Hakee syötetystä kentästä lyhimmän polun lähdöstä maaliin. 
+ * Tarkempi kuvaus määrittelydokumentissa
  *
  * @author tuomo
  */
@@ -22,6 +23,7 @@ public class Astar {
     final int leveys;
     final MinimiKeko2 keko;
     private boolean saavutettu;
+    private boolean saavuttamaton;
 
     public Astar(Verkko verkko) {
         this.verkko = verkko;
@@ -34,6 +36,7 @@ public class Astar {
         this.leveys = verkko.getLeveys();
         this.korkeus = verkko.getKorkeus();
         this.saavutettu = false;
+        this.saavuttamaton = false;
 
     }
     
@@ -45,13 +48,13 @@ public class Astar {
         alusta();
         Solmu[] solmut = verkko.getSolmut();
 
-        while (!this.saavutettu) {
+        while (!this.saavutettu && !this.saavuttamaton) {
 
             Solmu solmu = solmut[keko.pieninSolmu()];
-            if (solmu.getPaino() != 1000) {
+            if (solmu.getPaino() < 100000) {
                 paivitaVierusSolmut(solmu);
             } else {
-                break;
+                this.saavuttamaton = true;
             }
         }
 
@@ -72,7 +75,7 @@ public class Astar {
             tulostaKentta(kentta);
             return kentta;
         } else {
-            System.out.println("Ei tullut nyt kyllä vittuakaan, syötä kenttä, joka on ratkaistavissa.");
+            System.out.println("Ei tullut nyt kyllä yhtään mitään, syötä kenttä, joka on ratkaistavissa.");
         }
 
         return null;
@@ -92,7 +95,7 @@ public class Astar {
         Solmu[] solmut = verkko.getSolmut();
 
         for (Solmu solmu : solmut) {
-            alkuun[i] = 1000;
+            alkuun[i] = 100000;
             loppuun[i] = Math.abs(solmu.getX() - solmut[loppuSolmu].getX())
                     + Math.abs(solmu.getY() - solmut[loppuSolmu].getY() + solmu.getPaino());
             polku[i] = -1;

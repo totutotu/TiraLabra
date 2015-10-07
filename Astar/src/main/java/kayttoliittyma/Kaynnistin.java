@@ -58,28 +58,27 @@ public class Kaynnistin {
      */
     private char[][] lueKentta() {
         Scanner lukija = new Scanner(System.in);
-        int leveys = lueLeveys(lukija);
-        int korkeus = leveys;
+        int koko = lueLeveys(lukija);
         String rivi = "";
-        char[][] kentta = new char[korkeus][leveys];
+        char[][] kentta = new char[koko][koko];
 
         System.out.println("syötä rivit:");
 
         while (true) {
 
-            for (int i = 0; i < korkeus; i++) {
+            for (int i = 0; i < koko; i++) {
                 //tarkistetaan rivin pituus ja oikeellisuus
-                while (rivi.length() != leveys && !riviOnOikeaaMuotoa(rivi)) {
+                while (rivi.length() != koko || !riviOnOikeaaMuotoa(rivi)) {
                     rivi = lukija.nextLine().toUpperCase();
-                    if (rivi.length() != leveys) {
-                        System.out.println("Rivin pituus väärä, odotettiin " + leveys
+                    if (rivi.length() != koko) {
+                        System.out.println("Rivin pituus väärä, odotettiin " + koko
                                 + ", syötit " + rivi.length());
                     }
                     if (!riviOnOikeaaMuotoa(rivi)) {
                         System.out.println("Rivi väärää muotoa, tarkista syötteesi oikeellisuus");
                     }
                 }
-                for (int j = 0; j < leveys; j++) {
+                for (int j = 0; j < koko; j++) {
                     kentta[i][j] = rivi.charAt(j);
                 }
                 rivi = "";
@@ -95,7 +94,8 @@ public class Kaynnistin {
     }
 
     /**
-     * Tulostaa kutsutun kentän
+     * Tulostaa kutsutun kentän. Ei käytetä normaalissa käytössä, 
+     * pelkästään tarkistelussa ja tutkimisessa
      *
      * @param kentta
      */
@@ -124,35 +124,13 @@ public class Kaynnistin {
                 System.out.println("Syötä luku numeroina");
             }
             if (leveys < 2) {
-                System.out.println("Leveyden pitää olla vähintään 2");
+                System.out.println("Luvun pitää olla vähintään 2");
             }
         }
         return leveys;
 
     }
 
-    /**
-     * Lukee käyttäjältä kenttään halutun korkeuden ja tarkistaa oikeellisuuden
-     *
-     * @param lukija
-     * @return kentän leveys
-     */
-    private int lueKorkeus(Scanner lukija) {
-        System.out.println("Kuinka korkea? (väh. 2)");
-
-        int korkeus = -1;
-        while (korkeus < 2) {
-            try {
-                korkeus = Integer.parseInt(lukija.nextLine());
-            } catch (Exception e) {
-                System.out.println("Syötä luku numeroina");
-            }
-            if (korkeus < 2) {
-                System.out.println("Korkeuden pitää olla vähintään 2");
-            }
-        }
-        return korkeus;
-    }
 
     /**
      *Tarkistaa metodille tarjotun rivin (joista kenttä koostuu) oikeellisuuden

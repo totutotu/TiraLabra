@@ -80,8 +80,9 @@ public class MinimiKeko2 {
         }
     }
     /**
-     * Metodi toistaiseksi täysin tehoton, koska joudutaan käymään koko helvetin lista
-     * lävitse, korjailen kun viisastun
+     * Laskee halutun solmun painoa.
+     * 
+     * 
      * @param i
      * @param uusiPaino 
      */

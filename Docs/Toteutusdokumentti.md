@@ -6,7 +6,7 @@ Sovelluslogiikka sisältää kaikki tietorakenteet, joita algoritmissa tarvitaan
 
 Toiminta-paketissa on itse ohjelman ydintominta, luokka Astar, jossa sovelluslogiikan keinoin ruvetaan etsimään syötettyyn kenttään lyhintä polkua.
 
-Käynnistimen oma toimina käydään kerranläpi, joten toiminta vakioaikainen.
+Käynnistimen oma toimina käydään kerran läpi, joten toiminta vakioaikainen.
 
 Keossa alkion asettaminen vie ajan O(logn), sillä keossa alkio lisätään viimeiselle indeksille, jonka jälkeen sitä nostetaan tarvittaessa vertailujen avulla keon 'päällimmäiseksi'. Vertailuja jouduteen keon tehokkaasta rakenteesta johtuen suorittamaan enimmillään logn kertaa. Jos et tiedä, miten keko toimii, suosittelen käymään tietorakenteet ja algoritmit -kurssin uudestaan. (Puurakenteen ideaa käytetään taulukossa, asettaen alkiot siten, että vanhempi löytyy indeksistä i/2, vasen lapsukainen indeksistä 2*i ja oikea 2*1+1, ja oikea järjestys takaa, että parentti on aina lastaan pienempi ja juuressa on keon pienin alkio)
 
@@ -18,7 +18,7 @@ Pinon kaikki operaatiot ovat vakioaikaisia. Solmun myös.
 
 Verkon luominen vie aikaa solmujen määrän verran O(n), mutta se tehdään vain kerran eli ei hätää. Muut metodit vakioaikaisia.
 
-Astarin ydintoimintaan kuuluu alustaminen, joka vie solmujen määrän aikaa O(n), minkä jälkeen toiminta perustuu vierussolmujen tehokkaaseen tutkimiseen, kunnes maali on saavutettu. Suoritamme keon operaation pieninSolmu O(logn) niin monta kertaa, kunnes maali saavutetaan, mikä on maksimissaan solmujen määrä, eli toistaiseksi maksimi vaikuttaisi olevan O(nlogn). Vierussolmujen päivittämisessä tulee ongelma: Ensin tehdään vakioaikaisia vertailuja, kunnes päivitetään vierussolmujen painot. Koska toistaiseksi keon painojen päivitys metodi on tehokkuutta n, tulee kokonaistehokkuudeksi huonoimmassa tapauksessa algoritmille O(n^2), ei tarpeeksi hyvä! Ongelmalle haetaan vielä ratkaisua, tämä ei ole hyväksyttävää.
+Astarin ydintoimintaan kuuluu alustaminen, joka vie solmujen määrän aikaa O(n), minkä jälkeen toiminta perustuu vierussolmujen tehokkaaseen tutkimiseen, kunnes maali on saavutettu. Suoritamme keon operaation pieninSolmu O(logn) niin monta kertaa, kunnes maali saavutetaan, mikä on maksimissaan solmujen määrä, eli toistaiseksi maksimi vaikuttaisi olevan O(nlogn). Vierussolmujen päivittämisessä tulee ongelma: Ensin tehdään vakioaikaisia vertailuja, kunnes päivitetään vierussolmujen painot. Koska toistaiseksi keon painojen päivitys metodi on tehokkuutta n, tulee kokonaistehokkuudeksi huonoimmassa tapauksessa algoritmille O(n^2), ei tarpeeksi hyvä! Ongelmalle haetaan vielä ratkaisua, tämä ei ole hyvä.
 
 Tilavaativuus algoritmille O(n), sillä algoritmi vaatii pelkästään solmujen määrään suhteellisen määrän tilaa, mikä kasvaa pelkästään solmujen määrän mukaan.
 

@@ -1,7 +1,13 @@
 package sovelluslogiikka;
 
 import java.util.Stack;
-
+/**
+ * Toimii kuin tietorakenne pino.
+ * Taulukkoon saadaan popilla palautettua viimeksi lisätty alkio.
+ * Tietorakenne ei sisällä virheenhallintaa, koska tässä käytössä se ei ole tar-
+ * peellista.
+ * @author tuomo
+ */
 public class Pino {
     private Stack pino;
     private int[] taulu;
